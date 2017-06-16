@@ -18,6 +18,8 @@ class MainListViewController: AFItemsTableViewController {
         
         super.viewDidLoad()
         
+        
+        
         NotificationCenter.default.addObserver(self, selector: #selector(reload), name: NSNotification.Name.ViewModel.changedLists, object: nil)
 
         requestParameters.model = "Ferrari"

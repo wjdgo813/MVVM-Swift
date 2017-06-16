@@ -22,6 +22,7 @@
 		BABA16661EF0D5D700249D95 /* MainListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BABA16641EF0D5D700249D95 /* MainListTableViewCell.xib */; };
 		BABC58E11EEE733F00CED392 /* CarListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABC58E01EEE733F00CED392 /* CarListViewModel.swift */; };
 		BABC58E51EEE765300CED392 /* AFItemsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABC58E41EEE765300CED392 /* AFItemsTableViewController.swift */; };
+		BABCB2D41EF3727A00F97CA7 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABCB2D31EF3727A00F97CA7 /* APIRouter.swift */; };
 		BAC070B31EEFF71500CFAD8F /* MainListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC070B21EEFF71500CFAD8F /* MainListViewController.swift */; };
 		BAC070B71EEFF95C00CFAD8F /* ListData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC070B61EEFF95C00CFAD8F /* ListData.swift */; };
 		BAC070B91EEFF9D400CFAD8F /* ListProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC070B81EEFF9D400CFAD8F /* ListProtocol.swift */; };
@@ -72,6 +73,7 @@
 		BABA16641EF0D5D700249D95 /* MainListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainListTableViewCell.xib; sourceTree = "<group>"; };
 		BABC58E01EEE733F00CED392 /* CarListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarListViewModel.swift; sourceTree = "<group>"; };
 		BABC58E41EEE765300CED392 /* AFItemsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AFItemsTableViewController.swift; sourceTree = "<group>"; };
+		BABCB2D31EF3727A00F97CA7 /* APIRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
 		BAC070B21EEFF71500CFAD8F /* MainListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainListViewController.swift; sourceTree = "<group>"; };
 		BAC070B61EEFF95C00CFAD8F /* ListData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListData.swift; sourceTree = "<group>"; };
 		BAC070B81EEFF9D400CFAD8F /* ListProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListProtocol.swift; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 		BABC58E21EEE761300CED392 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				BABCB2D21EF3724000F97CA7 /* Api */,
 				BAC070B51EEFF8D500CFAD8F /* ViewModel */,
 				BAC070B41EEFF8CD00CFAD8F /* View */,
 				BABC58E31EEE761A00CED392 /* ListData */,
@@ -228,6 +231,14 @@
 				BAC070B81EEFF9D400CFAD8F /* ListProtocol.swift */,
 			);
 			name = ListData;
+			sourceTree = "<group>";
+		};
+		BABCB2D21EF3724000F97CA7 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				BABCB2D31EF3727A00F97CA7 /* APIRouter.swift */,
+			);
+			name = Api;
 			sourceTree = "<group>";
 		};
 		BAC070B11EEFF6CE00CFAD8F /* View */ = {
@@ -554,6 +565,7 @@
 				BAC070B71EEFF95C00CFAD8F /* ListData.swift in Sources */,
 				BA9AAB801ED6C31A00F86574 /* ViewController.swift in Sources */,
 				BAC070B91EEFF9D400CFAD8F /* ListProtocol.swift in Sources */,
+				BABCB2D41EF3727A00F97CA7 /* APIRouter.swift in Sources */,
 				BA9AAB7E1ED6C31A00F86574 /* AppDelegate.swift in Sources */,
 				BAC070C21EF008C000CFAD8F /* CarCellviewModel.swift in Sources */,
 				BAC070B31EEFF71500CFAD8F /* MainListViewController.swift in Sources */,
