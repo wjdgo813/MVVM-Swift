@@ -18,14 +18,21 @@ class MainListViewController: AFItemsTableViewController {
         
         super.viewDidLoad()
         
+//        let backButton = UIBarButtonItem(image: <#T##UIImage?#>, style: <#T##UIBarButtonItemStyle#>, target: <#T##Any?#>, action: <#T##Selector?#>)
         
-        
+        /*
+         let parameters:Parameters = ["q":"daum",
+         "result":5,
+         "pageno":1,
+         "output":"json"
+         ]
+ */
         NotificationCenter.default.addObserver(self, selector: #selector(reload), name: NSNotification.Name.ViewModel.changedLists, object: nil)
-
-        requestParameters.model = "Ferrari"
-        requestParameters.make = "해혀니"
-        requestParameters.horsePower = 10
-        requestParameters.photoURL = "www.naver.com"
+        
+        self.requestParameters.q = "daum"
+        self.requestParameters.result = 5
+        self.requestParameters.pageNo = 1
+        self.requestParameters.output = "json"
         
         self.viewModel.setParameter(requestParameters)
         

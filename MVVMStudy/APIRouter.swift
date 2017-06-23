@@ -13,6 +13,7 @@ enum APIRouter : URLRequestConvertible{
     case list_image(params:Parameters?)
     
     static let baseURLString = "https://apis.daum.net"
+    static let apiKey = "d9c57e78e3c7c9b6bbd00d8ca3c788fa"
     
     var method : HTTPMethod{
         switch self {
@@ -23,8 +24,16 @@ enum APIRouter : URLRequestConvertible{
     
     fileprivate var result : (path : String, parameters : Parameters?){
         switch self {
+            
         case .list_image(let param):
-            return ("/search/image",param)
+            let originalURL = "/search/image?apikey=\(APIRouter.apiKey)"
+            let escapedString = originalURL.addingPercentEncoding(withAllowedCharacters:NSCharacterSet.urlQueryAllowed)
+            
+            let escaped = CFURLCreateStringByAddingPercentEscapes(nil, originalURL as CFString, nil,
+                                                                  "/%&=?$#+-~@<>|\\*,.()[]{}^!" as CFString,
+                                                                  CFStringBuiltInEncodings.UTF8.rawValue)
+            
+            return (escaped!,param)
         }
     }
     
@@ -34,6 +43,8 @@ enum APIRouter : URLRequestConvertible{
             let url = try APIRouter.baseURLString.asURL()
             var urlRequest = URLRequest(url: url.appendingPathComponent(result.path))
             urlRequest.httpMethod = method.rawValue
+            
+            
             return try URLEncoding.default.encode(urlRequest, with: result.parameters)
         }
     }

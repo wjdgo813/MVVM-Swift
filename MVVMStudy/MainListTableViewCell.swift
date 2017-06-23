@@ -32,13 +32,15 @@ class MainListTableViewCell: UITableViewCell {
     }
     
     private func display(){
-        set(modelString: (viewModel?.model)!, makeString: (viewModel?.make)!, horsePowerInt: (viewModel?.horsePower)!)
+        set(title: (viewModel?.title)!, cpname: (viewModel?.cpname)!, thumbnail: (viewModel?.thumbnail)!)
+        
     }
     
-    private func set(modelString : String,makeString : String,horsePowerInt:Int){
-        self.modelLabel.text = modelString
-        self.makeLabel.text = makeString
-        self.horsePowerLabel.text = String(horsePowerInt)
+    private func set(title : String,cpname : String,thumbnail:URL){
+        self.modelLabel.text = title
+        self.makeLabel.text = cpname
+//        self.horsePowerLabel.text = thumbnail
+        
         
     }
     

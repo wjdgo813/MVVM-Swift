@@ -7,23 +7,36 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class CarModel: NSObject {
     var datas : [ListData] = []
+    var listData : ListResult?
+    
+    private let api :SearchImageAPI! = SearchImageAPI()
+    private var apiRequest:DataRequest?
+    
+    
     override init(){
         
     }
     
-    func load(parameter:NSDictionary){
-        guard let modelString :String = parameter["model"] as? String else{return}
-        guard let makeString : String = parameter["make"] as? String else{return}
-        guard let horsePowerInt:Int = parameter["horsePower"] as? Int else{return}
-        guard let photoURLString:String = parameter["photoURL"] as? String else{return}
-        
-        let data = ListData(model: modelString, make: makeString, horsePower: horsePowerInt, photoURL: photoURLString)
-        self.datas.append(data)
-        
-        NotificationCenter.default.post(name: Notification.Name.Model.changedLists, object : nil)
-        
+    func load(parameter:Parameters){
+        guard apiRequest == nil else {
+            return
+        }
+        apiRequest = api.loadImageList(parameter, success: { [weak self](listSet) in
+            self?.listData = listSet
+            let rawDatas = self?.listData?.listSet?.item
+            rawDatas?.forEach{ rawJson in
+                self?.datas.append(ListData(rawJson:rawJson))
+            }
+            NotificationCenter.default.post(name: Notification.Name.Model.changedLists, object: nil)
+            self?.apiRequest = nil
+            
+        }){ [weak self] (error) in self?.apiRequest = nil
+            
+        }
     }
 }

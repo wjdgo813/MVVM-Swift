@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import SwiftyJSON
+import Alamofire
 
 extension ListData:Item{
     
@@ -47,13 +49,11 @@ class CarListViewModel:ItemsViewModel{
     }
     
     func loadData() {
-        let parameters:NSDictionary = ["model":self.requestParameter!.model ?? "",
-                                       "make":self.requestParameter!.make ?? "",
-                                       "horsePower":self.requestParameter!.horsePower ?? "",
-                                       "photoURL" : self.requestParameter!.photoURL ?? ""
+        let parameters:Parameters = ["q":"daum",
+                                       "result":5,
+                                       "pageno":1,
+                                       "output":"json"
                                                     ]
-        //api 통신 거쳤다 셈 치고...... 
-        //
         
         self.model.load(parameter: parameters)
     }

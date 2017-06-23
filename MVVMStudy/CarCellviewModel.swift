@@ -16,20 +16,35 @@ class CarCellViewModel: ItemCellViewModel {
         self.data = data
     }
     
-    var model : String{
-        return self.data.model!
+    var pubData :String{
+        return self.data.pubData!
     }
     
-    var make : String{
-        return self.data.make!
+    var title:String{
+        return self.data.title!
     }
     
-    var horsePower : Int{
-        return self.data.horsePower!
+    var thumbnail:URL{
+        return self.data.thumbnail!
     }
     
-    var photoURL : String{
-        return self.data.photoURL!
+    var link:URL{
+        return self.data.link!
     }
+    
+    var cpname:String{
+        return self.data.cpname!
+    }
+    
+    var height : Int{
+        return self.data.height!
+    }
+    
+    var width:Int{
+        return self.data.width!
+    }
+    
+    
+    
     
 }
